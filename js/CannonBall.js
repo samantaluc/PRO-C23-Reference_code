@@ -1,9 +1,7 @@
 class CannonBall {
-  constructor(x, y) {
+  constructor(x, y) 
+  {
     var options = {
-      restitution: 0.8,
-      friction: 1.0,
-      density: 1.0,
       isStatic: true
     };
     this.r = 30;
@@ -17,15 +15,12 @@ class CannonBall {
     Matter.Body.setVelocity(this.body, { x: 30, y: -20 });
   }
 
-  display() {
-    var angle = this.body.angle;
+  display() 
+  {
     var pos = this.body.position;
-
     push();
-    translate(pos.x, pos.y);
-    rotate(angle);
     imageMode(CENTER);
-    image(this.image, 0, 0, this.r, this.r);
+    image(this.image, pos.x, pos.y, this.r, this.r);
     pop();
   }
 }
